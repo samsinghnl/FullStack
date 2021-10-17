@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="/postUser.js"></script>
+    <style>
+        .header {
+            padding: 5px;
+            height: 70px;
+            text-align: center;
+            background: rgba(107, 128, 133, 255);
+            color: black;
+            font-size: 15px;
+            padding-bottom: 25px;
+
+        }
+
+        .container {
+            padding: 5px;
+            height: 100%;
+            text-align: center;
+            background: rgba(199, 210, 215, 255);
+            color: black;
+            font-size: 15px;
+        }
+
+        .leftside {
+            padding: 20px;
+            float: left;
+        }
+
+        .rightftside {
+
+            float: right;
+
+        }
+
+        .body {
+            height: 80%;
+            width: 70%;
+            float: center;
+            padding-left: 200px;
+        }
+
+        .button {
+            color: #6e8288;
+
+        }
+    </style>
+</head>
+
+<body class="body">
+<div class="alert alert-dark" id="postResultDiv" align="center"></div>
+<br>
+<br>
+<br>
+
+
+<div class="container">
+    <div class="header">
+        <h1>Notification Form</h1>
+        <br>
+    </div>
+
+    <br>
+    <form id="customerForm">
+        <div class="row">
+            <div class="leftside  col-lg-6">
+                <div class="form-group">
+
+                    <h4 style="color:#6b8085;float: left; padding-left: 10px;size: 25px;">
+                        First Name
+                    </h4>
+                    <br>
+                    <input type="text" class="form-control" id="fname" aria-describedby="emailHelp"
+                           placeholder="First Name">
+                </div>
+
+                <br>
+
+                <small id="emailHelp" class="form-text text-muted" style="float:left; font-size:20px;color:#6b8085 ">
+                    How
+                    Would you prefer To Notidied? </small>
+                <br>
+                <br>
+                <input class="form-check-input" type="checkbox" value="ba" name="rquirednoemail"
+                       style="float: left;padding-right: 350px; width: 25px; height: 25px;">
+                <h4 style="color:#6b8085;float: left; padding-left: 10px;size: 25px;">
+                    Email Address
+                </h4>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                       placeholder="Email Address">
+
+            </div>
+
+            <div class="Rightside  col-lg-6">
+                <div class="form-group">
+                    <br>
+                    <h4 style="color:#6b8085;float: left; padding-left: 10px;size: 25px;">
+                        Last Name
+                    </h4>
+                    <input type="text" class="form-control" id="lname" aria-describedby="emailHelp"
+                           placeholder="Last Name">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <input class="form-check-input" type="checkbox" value="ab" id="flexCheckDefault" name="rquirednoemail"
+                           style="float: left; width: 25px;height: 25px;">
+
+                    <h4 style="color:#6b8085;float: left; padding-left: 10px; size: 25px;">
+                        Phone Number
+                    </h4>
+
+                    <input type="text" class="form-control" id="phonenumber" aria-describedby="emailHelp"
+                           placeholder="Phone Number">
+                </div>
+
+            </div>
+            <center>
+                <div class="drop" style="padding-right:70px;">
+                    <p style="color:#6b8085;font-size:20px;padding-right: 45px;"><B>Supervisor :</B></p>
+
+                    <select name="Supervisor" id="Supervisor" style="width:250px; height:38px;">
+                        <option value="">Selct The value</option>
+                        <option th:each="list : ${lists}" th:value="${list.getvalue()}"
+                                th:text="${list.getvalue()}"></option>
+                    </select>
+
+                    </select>
+                </div>
+            </center>
+        </div>
+
+        <br>
+
+        <button type="submit" class="submit" id="btn-submit"
+                style="background-color: #6e8288 ; color: white;  height: 35px; width: 130px;border-radius: 5px;">
+            Submitt
+        </button>
+    </form>
+</div>
+
+
+</div>
+
+
+</body>
+
+
+</html>
